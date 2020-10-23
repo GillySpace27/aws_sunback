@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae7e6e9e-6806-4002-ac76-aa9250410481" name="Default Changelist" comment="" />
+    <list default="true" id="ae7e6e9e-6806-4002-ac76-aa9250410481" name="Default Changelist" comment="First">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_world_function/MainSunKey.ppk" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +29,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Dropbox/Website" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -166,12 +172,24 @@
       <workItem from="1603413561272" duration="14122000" />
       <workItem from="1603427848817" duration="1482000" />
       <workItem from="1603429731572" duration="9763000" />
-      <workItem from="1603443933050" duration="11077000" />
+      <workItem from="1603443933050" duration="12203000" />
     </task>
+    <task id="LOCAL-00001" summary="First">
+      <created>1603493307850</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603493307850</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First" />
+    <option name="LAST_COMMIT_MESSAGE" value="First" />
   </component>
   <component name="WindowStateProjectService">
     <state x="817" y="-1655" key="#Notifications" timestamp="1603440728730">
@@ -247,6 +265,10 @@
     </state>
     <state x="100" y="325" key="SettingsEditor/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@0.0.1920.1040" timestamp="1603413379417" />
     <state x="532" y="-1704" key="SettingsEditor/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@529.-2432.1094.1914" timestamp="1603473938623" />
+    <state x="669" y="-1759" key="Vcs.Push.Dialog.v2" timestamp="1603493449926">
+      <screen x="529" y="-2432" width="1094" height="1914" />
+    </state>
+    <state x="669" y="-1759" key="Vcs.Push.Dialog.v2/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@529.-2432.1094.1914" timestamp="1603493449926" />
     <state x="622" y="-2339" width="909" height="1720" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603472266139">
       <screen x="529" y="-2432" width="1094" height="1914" />
     </state>
