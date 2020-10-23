@@ -1,0 +1,11 @@
+requests
+six
+regex
+numpy
+sunpy
+matplotlib
+bs4
+html5lib
+tqdm
+boto3
+astropy

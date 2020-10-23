@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/hello_world_function" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/modify_imgs_function" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/.aws-sam" />
+      <excludeFolder url="file://$MODULE_DIR$/hello_world_function/hello_world/renders" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.8 (aws_sunback)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="deploySettings">
+    <option name="samConfigs">
+      <map>
+        <entry key="template.yaml">
+          <value>
+            <DeploySamConfig>
+              <option name="autoExecute" value="true" />
+              <option name="bucketName" value="gillyspace27-test-billboard" />
+              <option name="enabledCapabilities">
+                <list>
+                  <option value="IAM" />
+                  <option value="NAMED_IAM" />
+                </list>
+              </option>
+              <option name="stackName" value="teststacktwo" />
+            </DeploySamConfig>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</module>
