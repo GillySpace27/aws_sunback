@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae7e6e9e-6806-4002-ac76-aa9250410481" name="Default Changelist" comment="second">
-      <change afterPath="$PROJECT_DIR$/hello_world_function/cm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello_world_function/color_tables.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello_world_function/data/idl_3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello_world_function/hello_world/lambda_function_movie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello_world_function/modifyMovie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello_world_function/modifyMovie_bk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aws_sunback.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aws_sunback.iml" afterDir="false" />
+    <list default="true" id="ae7e6e9e-6806-4002-ac76-aa9250410481" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello_world_function/hello_world/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello_world_function/hello_world/lambda_function.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello_world_function/modify.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello_world_function/modify.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_world_function/cm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_world_function/color_tables.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_world_function/data/idl_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_world_function/modify.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_world_function/modifyMovie.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_world_function/modifyMovie_bk.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_world_function/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hello_world_function/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +212,7 @@
       <workItem from="1605030498910" duration="11800000" />
       <workItem from="1605286999221" duration="2349000" />
       <workItem from="1605725079350" duration="16941000" />
-      <workItem from="1605812518113" duration="3607000" />
+      <workItem from="1605812518113" duration="5460000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <created>1603493307850</created>
@@ -230,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603494308578</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="working lambda">
+      <created>1605819370822</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605819370822</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +244,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First" />
     <MESSAGE value="second" />
-    <option name="LAST_COMMIT_MESSAGE" value="second" />
+    <MESSAGE value="working lambda" />
+    <option name="LAST_COMMIT_MESSAGE" value="working lambda" />
   </component>
   <component name="WindowStateProjectService">
     <state x="817" y="-1655" key="#Notifications" timestamp="1603440728730">
@@ -261,6 +267,10 @@
       <screen x="529" y="-2432" width="1094" height="1914" />
     </state>
     <state x="836" y="-1599" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@529.-2432.1094.1914" timestamp="1603440384888" />
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1605819370228">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="88" key="CommitChangelistDialog2/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@0.0.1920.1040" timestamp="1605819370227" />
     <state x="739" y="295" key="FileChooserDialogImpl" timestamp="1604441046337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -268,9 +278,10 @@
     <state x="739" y="295" key="FileChooserDialogImpl/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@0.0.1920.1040" timestamp="1604016011977" />
     <state x="950" y="-1889" key="FileChooserDialogImpl/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@529.-2432.1094.1914" timestamp="1603846036789" />
     <state x="739" y="295" key="FileChooserDialogImpl/562.-2453.1094.1914/-3278.-2160.2560.1400/0.0.1920.1040/1930.-2020.1200.1880/3130.-2030.720.1240@0.0.1920.1040" timestamp="1604441046337" />
-    <state width="878" height="421" key="GridCell.Tab.0.bottom" timestamp="1605811821532">
-      <screen x="240" y="-2432" width="1094" height="1906" />
+    <state width="1566" height="353" key="GridCell.Tab.0.bottom" timestamp="1605821654923">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1566" height="353" key="GridCell.Tab.0.bottom/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@0.0.1920.1040" timestamp="1605821654923" />
     <state width="972" height="421" key="GridCell.Tab.0.bottom/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@1608.-1941.1200.1880" timestamp="1605243080337" />
     <state width="870" height="421" key="GridCell.Tab.0.bottom/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@2808.-1941.1080.1880" timestamp="1605575757118" />
     <state width="878" height="421" key="GridCell.Tab.0.bottom/2808.-1941.1080.1880/1608.-1941.1200.1880/240.-2432.1094.1906/0.0.1920.1040/-3600.-2181.2560.1400@240.-2432.1094.1906" timestamp="1605811821532" />
@@ -281,9 +292,10 @@
     <state width="1052" height="550" key="GridCell.Tab.0.bottom/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@529.-2432.1094.1914" timestamp="1603845951738" />
     <state width="1877" height="158" key="GridCell.Tab.0.bottom/529.-2432.1094.1914/-3311.-2186.2560.1400/1897.-2205.1280.984/0.0.1920.1040@0.0.1920.1040" timestamp="1604431288375" />
     <state width="1052" height="329" key="GridCell.Tab.0.bottom/562.-2453.1094.1914/-3278.-2160.2560.1400/0.0.1920.1040/1930.-2020.1200.1880/3130.-2030.720.1240@562.-2453.1094.1914" timestamp="1604534950919" />
-    <state width="878" height="421" key="GridCell.Tab.0.center" timestamp="1605811821532">
-      <screen x="240" y="-2432" width="1094" height="1906" />
+    <state width="1566" height="353" key="GridCell.Tab.0.center" timestamp="1605821654923">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1566" height="353" key="GridCell.Tab.0.center/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@0.0.1920.1040" timestamp="1605821654923" />
     <state width="972" height="421" key="GridCell.Tab.0.center/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@1608.-1941.1200.1880" timestamp="1605243080337" />
     <state width="870" height="421" key="GridCell.Tab.0.center/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@2808.-1941.1080.1880" timestamp="1605575757118" />
     <state width="878" height="421" key="GridCell.Tab.0.center/2808.-1941.1080.1880/1608.-1941.1200.1880/240.-2432.1094.1906/0.0.1920.1040/-3600.-2181.2560.1400@240.-2432.1094.1906" timestamp="1605811821532" />
@@ -294,9 +306,10 @@
     <state width="1052" height="550" key="GridCell.Tab.0.center/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@529.-2432.1094.1914" timestamp="1603845951738" />
     <state width="1877" height="158" key="GridCell.Tab.0.center/529.-2432.1094.1914/-3311.-2186.2560.1400/1897.-2205.1280.984/0.0.1920.1040@0.0.1920.1040" timestamp="1604431288375" />
     <state width="1052" height="329" key="GridCell.Tab.0.center/562.-2453.1094.1914/-3278.-2160.2560.1400/0.0.1920.1040/1930.-2020.1200.1880/3130.-2030.720.1240@562.-2453.1094.1914" timestamp="1604534950918" />
-    <state width="878" height="421" key="GridCell.Tab.0.left" timestamp="1605811821532">
-      <screen x="240" y="-2432" width="1094" height="1906" />
+    <state width="1566" height="353" key="GridCell.Tab.0.left" timestamp="1605821654923">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1566" height="353" key="GridCell.Tab.0.left/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@0.0.1920.1040" timestamp="1605821654923" />
     <state width="972" height="421" key="GridCell.Tab.0.left/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@1608.-1941.1200.1880" timestamp="1605243080337" />
     <state width="870" height="421" key="GridCell.Tab.0.left/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@2808.-1941.1080.1880" timestamp="1605575757118" />
     <state width="878" height="421" key="GridCell.Tab.0.left/2808.-1941.1080.1880/1608.-1941.1200.1880/240.-2432.1094.1906/0.0.1920.1040/-3600.-2181.2560.1400@240.-2432.1094.1906" timestamp="1605811821532" />
@@ -307,9 +320,10 @@
     <state width="1052" height="550" key="GridCell.Tab.0.left/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@529.-2432.1094.1914" timestamp="1603845951737" />
     <state width="1877" height="158" key="GridCell.Tab.0.left/529.-2432.1094.1914/-3311.-2186.2560.1400/1897.-2205.1280.984/0.0.1920.1040@0.0.1920.1040" timestamp="1604431288375" />
     <state width="1052" height="329" key="GridCell.Tab.0.left/562.-2453.1094.1914/-3278.-2160.2560.1400/0.0.1920.1040/1930.-2020.1200.1880/3130.-2030.720.1240@562.-2453.1094.1914" timestamp="1604534950918" />
-    <state width="878" height="421" key="GridCell.Tab.0.right" timestamp="1605811821532">
-      <screen x="240" y="-2432" width="1094" height="1906" />
+    <state width="1566" height="353" key="GridCell.Tab.0.right" timestamp="1605821654923">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1566" height="353" key="GridCell.Tab.0.right/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@0.0.1920.1040" timestamp="1605821654923" />
     <state width="972" height="421" key="GridCell.Tab.0.right/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@1608.-1941.1200.1880" timestamp="1605243080337" />
     <state width="870" height="421" key="GridCell.Tab.0.right/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@2808.-1941.1080.1880" timestamp="1605575757118" />
     <state width="878" height="421" key="GridCell.Tab.0.right/2808.-1941.1080.1880/1608.-1941.1200.1880/240.-2432.1094.1906/0.0.1920.1040/-3600.-2181.2560.1400@240.-2432.1094.1906" timestamp="1605811821532" />
@@ -349,9 +363,10 @@
     <state x="1693" y="-1252" key="SettingsEditor/322.-2453.1094.1914/-3518.-2160.2560.1400/0.0.1920.1040/1690.-1967.1200.1880/2890.-1972.1080.1880@1690.-1967.1200.1880" timestamp="1605038280693" />
     <state x="100" y="325" key="SettingsEditor/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@0.0.1920.1040" timestamp="1603413379417" />
     <state x="532" y="-1704" key="SettingsEditor/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@529.-2432.1094.1914" timestamp="1603473938623" />
-    <state x="669" y="-1759" key="Vcs.Push.Dialog.v2" timestamp="1603494331896">
-      <screen x="529" y="-2432" width="1094" height="1914" />
+    <state x="246" y="366" key="Vcs.Push.Dialog.v2" timestamp="1605819386621">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="246" y="366" key="Vcs.Push.Dialog.v2/240.-2432.1094.1914/-3600.-2181.2560.1400/0.0.1920.1040/1608.-1941.1200.1880/2808.-1941.1080.1880@0.0.1920.1040" timestamp="1605819386621" />
     <state x="669" y="-1759" key="Vcs.Push.Dialog.v2/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@529.-2432.1094.1914" timestamp="1603494331896" />
     <state x="622" y="-2339" width="909" height="1720" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603472266139">
       <screen x="529" y="-2432" width="1094" height="1914" />
@@ -379,6 +394,6 @@
     <state x="739" y="-1990" width="672" height="678" key="search.everywhere.popup/529.-2432.1094.1914/-1391.-1102.1920.1040/1897.-1030.1280.984/0.0.1920.1040@529.-2432.1094.1914" timestamp="1603477675206" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/aws_sunback$lambda_function.coverage" NAME="lambda_function Coverage Results" MODIFIED="1605812894200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hello_world_function/hello_world" />
+    <SUITE FILE_PATH="coverage/aws_sunback$lambda_function.coverage" NAME="lambda_function Coverage Results" MODIFIED="1605821654915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hello_world_function/hello_world" />
   </component>
 </project>

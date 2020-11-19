@@ -7,5 +7,4 @@ matplotlib
 bs4
 html5lib
 tqdm
-boto3
 astropy
