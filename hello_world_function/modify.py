@@ -1,13 +1,14 @@
 
 import numpy as np
-import sunpy.map
 import os
 import matplotlib.pyplot as plt
 from time import strftime
 from datetime import timedelta
 from scipy.signal import savgol_filter
-
+import astropy.units as u
 import datetime
+
+from color_tables import aia_color_table
 
 class Modify:
 
@@ -290,31 +291,31 @@ class Modify:
 
         radius_bin = np.asarray(np.floor(self.rad_flat), dtype=np.int32)
         flat_data = data.flatten()
-        # print('d2')
-        # print(radius_bin)
-        # print(len(self.fakeMin))
-        # print(self.fakeMin)
-        # print(self.fakeMax)
 
         the_min = self.fakeMin[radius_bin]
         # plt.plot(self.fakeMin)
         # plt.show()
         # import pdb; pdb.set_trace()
         # the_min = np.asarray([self.fakeMin[r] for r in radius_bin])
-        print('d3', the_min)
+        # print('d3', the_min)
         the_max = self.fakeMax[radius_bin]
         # the_max = np.asarray([self.fakeMax[r] for r in radius_bin])
 
         # the_max = self.fakeMax[radius_bin]
-        top = np.subtract(flat_data, the_min)
-        bottom = np.subtract(the_max, the_min)
+        top = bottom = dat_corona = np.ones_like(flat_data)
+        import warnings
+        with warnings.catch_warnings():
+            warnings.filterwarnings('error')
+            try:
 
-        dat_corona = np.divide(top, bottom)
+                top = np.subtract(flat_data, the_min)
+                bottom = np.subtract(the_max, the_min)
 
-
+                dat_corona = np.divide(top, bottom)
+            except RuntimeWarning as e:
+                pass
 
         return dat_corona
-
 
     def coronagraph(self, data):
 
@@ -570,8 +571,14 @@ class Modify:
         else:
             lowP = np.nanpercentile(data, low)
         highP = np.nanpercentile(data, high)
-
-        return (data - lowP) / (highP - lowP)
+        import warnings
+        with warnings.catch_warnings():
+            warnings.filterwarnings('error')
+            try:
+                out = (data - lowP) / (highP - lowP)
+            except RuntimeWarning as e:
+                out = data
+        return out
 
     def plot_and_save(self):
 
@@ -586,17 +593,10 @@ class Modify:
 
         full_name, save_path, time_string, ii = self.image_data
         time_string2 = self.clean_time_string(time_string)
-        name = self.clean_name_string(full_name)
+        name, wave = self.clean_name_string(full_name)
 
         self.figbox = []
         for processed in [False, True]:
-
-            if not True:
-                if not processed:
-                    continue
-            if not processed:
-                if original_data is None:
-                    continue
 
             # Create the Figure
             fig, ax = plt.subplots()
@@ -616,12 +616,21 @@ class Modify:
                 height = 1.05
 
             else:
+                
+                # from color_tables import aia_wave_dict
+                # aia_wave_dict(wave)
+                
                 inst = '  AIA'
+                cmap = 'sdoaia{}'.format(wave)
+                cmap = aia_color_table(int(wave)*u.angstrom)
                 if processed:
-                    plt.imshow(data , cmap='sdoaia{}'.format(name), origin='lower', interpolation=None,  vmin=self.vmin_plot, vmax=self.vmax_plot)
+                    plt.imshow(data, cmap=cmap, origin='lower', interpolation=None,  vmin=self.vmin_plot, vmax=self.vmax_plot)
                 else:
                     toprint = self.normalize(self.absqrt(original_data))
-                    plt.imshow(toprint , cmap='sdoaia{}'.format(name), origin='lower', interpolation=None) #,  vmin=self.vmin_plot, vmax=self.vmax_plot)
+                    # plt.imshow(toprint, cmap='sdoaia{}'.format(wave), origin='lower', interpolation=None) #,  vmin=self.vmin_plot, vmax=self.vmax_plot)
+                    
+                    
+                    plt.imshow(self.absqrt(original_data), cmap=cmap, origin='lower', interpolation=None) #,  vmin=self.vmin_plot, vmax=self.vmax_plot)
 
 
                 plt.tight_layout(pad=0)
@@ -631,10 +640,10 @@ class Modify:
             buffer = '' if len(name) == 3 else '  '
             buffer2 = '    ' if len(name) == 2 else ''
 
-            title = "{}    {} {}, {}{}".format(buffer2, inst, name, time_string2, buffer)
-            title2 = "{} {}, {}".format(inst, name, time_string2)
+            title = "{}    {} {}, {}{}".format(buffer2, inst, wave, time_string2, buffer)
             ax.annotate(title, (0.15, height + 0.02), xycoords='axes fraction', fontsize='large',
                         color='w', horizontalalignment='center')
+            # title2 = "{} {}, {}".format(inst, name, time_string2)
             # ax.annotate(title2, (0, 0.05), xycoords='axes fraction', fontsize='large', color='w')
             the_time = strftime("%Z %I:%M%p")
             if the_time[0] == '0':
@@ -646,6 +655,7 @@ class Modify:
             self.blankAxis(ax)
             # plt.show()
             self.figbox.append([fig, ax, processed])
+            # plt.show()
 
     def export(self):
         full_name, save_path, time_string, ii = self.image_data
@@ -694,8 +704,8 @@ class Modify:
             for fig, ax, processed in self.figbox:
                 middle = '' if processed else "_orig"
 
-                name = self.clean_name_string(full_name)
-                new_path = save_path[:-5] +name + middle + ".png"
+                name, wave = self.clean_name_string(full_name)
+                new_path = save_path[:-5] + name + middle + ".png"
                 directory = "renders/"
                 path = directory + new_path
                 os.makedirs(directory, exist_ok=True)
@@ -707,30 +717,38 @@ class Modify:
         finally:
             for fig, ax, processed in self.figbox:
                 plt.close(fig)
+            self.save_concatinated()
 
-    def export_files2(self):
-        full_name, save_path, time_string, ii = self.image_data
-        pixels = self.changed.shape[0]
-        dpi = pixels / self.inches
-        try:
-            for fig, ax, processed in self.figbox:
-                middle = '' if processed else "_orig"
+    def save_concatinated(self):
+            name = self.pathBox[1][:-4] + "_cat.png"
+            fmtString = "ffmpeg -i {} -i {} -y -filter_complex hstack {} -hide_banner -loglevel warning"
+            os.system(fmtString.format(self.pathBox[1], self.pathBox[0], name))
 
-                new_path = save_path[:-5] + middle + ".png"
-                name = self.clean_name_string(full_name)
-                directory = "renders/"
-                path = directory + new_path.rsplit('/')[1]
-                os.makedirs(directory, exist_ok=True)
-                plt.close(fig)
-                self.newPath = path
-                fig.savefig(path, facecolor='black', edgecolor='black', dpi=dpi)
-                print("\tSaved {} Image:{}".format('Processed' if processed else "Unprocessed", name))
 
-        except Exception as e:
-            raise e
-        finally:
-            for fig, processed in self.figbox:
-                plt.close(fig)
+    # def export_files2(self):
+    #     full_name, save_path, time_string, ii = self.image_data
+    #     pixels = self.changed.shape[0]
+    #     dpi = pixels / self.inches
+    #     paths = []
+    #     try:
+    #         for fig, ax, processed in self.figbox:
+    #             middle = '' if processed else "_orig"
+    #
+    #             new_path = save_path[:-5] + middle + ".png"
+    #             name = self.clean_name_string(full_name)
+    #             directory = "renders/"
+    #             path = directory + new_path.rsplit('/')[1]
+    #             os.makedirs(directory, exist_ok=True)
+    #             self.newPath = path
+    #             fig.savefig(path, facecolor='black', edgecolor='black', dpi=dpi)
+    #             print("\tSaved {} Image:{}".format('Processed' if processed else "Unprocessed", name))
+    #             paths.append(path)
+    #
+    #     except Exception as e:
+    #         raise e
+    #     finally:
+    #         for fig, ax, processed in self.figbox:
+    #             plt.close(fig)
 
     def get_figs(self):
         return self.figbox
@@ -764,16 +782,17 @@ class Modify:
         digits = ''.join(i for i in full_name if i.isdigit())
         # Make the name strings
         name = digits + ''
-        while name[0] == '0':
-            name = name[1:]
-        return name
+        digits = "{:04d}".format(int(name))
+        # while name[0] == '0':
+        #     name = name[1:]
+        return digits, name
 
     @staticmethod
     def clean_time_string(time_string):
         # Make the name strings
 
         cleaned = datetime.datetime.strptime(time_string[:-4], "%Y-%m-%dT%H:%M:%S")
-        cleaned += timedelta(hours=-6)
+        cleaned += timedelta(hours=-7)
 
         # tz = timezone(timedelta(hours=-1))
         # import pdb; pdb.set_trace()
@@ -781,8 +800,9 @@ class Modify:
         # cleaned = Time(time_string).datetime.replace(tzinfo=timezone.utc).astimezone(tz=None).strftime("%I:%M%p, %b-%d, %Y")
         # cleaned = Time(time_string).datetime.replace(tzinfo=timezone.utc).astimezone(tz=tz).strftime("%I:%M%p, %b-%d, %Y")
         # cleaned = Time(time_string).datetime.strftime("%I:%M%p, %b-%d, %Y")
-        print("----------->", cleaned)
-        return cleaned
+        # print("----------->", cleaned)
+        # import pdb; pdb.set_trace()
+        return cleaned.strftime("%m-%d-%Y %I:%M%p")
         # name = full_name + ''
         # while name[0] == '0':
         #     name = name[1:]

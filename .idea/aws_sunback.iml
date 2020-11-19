@@ -10,6 +10,10 @@
     <orderEntry type="jdk" jdkName="Python 3.8 (aws_sunback)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PyDocumentationSettings">
+    <option name="format" value="PLAIN" />
+    <option name="myDocStringFormat" value="Plain" />
+  </component>
   <component name="deploySettings">
     <option name="samConfigs">
       <map>
@@ -17,14 +21,14 @@
           <value>
             <DeploySamConfig>
               <option name="autoExecute" value="true" />
-              <option name="bucketName" value="gillyspace27-test-billboard" />
+              <option name="bucketName" value="gillyspace-testbucket" />
               <option name="enabledCapabilities">
                 <list>
                   <option value="IAM" />
                   <option value="NAMED_IAM" />
                 </list>
               </option>
-              <option name="stackName" value="teststacktwo" />
+              <option name="stackName" value="gillyspace-teststack" />
             </DeploySamConfig>
           </value>
         </entry>

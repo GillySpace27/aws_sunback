@@ -17,17 +17,17 @@ bucket = s3.Bucket('gillyspace27-test-billboard')
 s3_client = boto3.client('s3')
 
 #Location of the Solar Images
-archive_url = "http://jsoc2.stanford.edu/data/aia/synoptic/mostrecent/"
+archive_url = "http://jsoc2.stanford.edu/data/aia/synoptic/nrt/"
 
 #Initialization
 global last_time
 global start_time
 last_time  = time()
 start_time = time()
-background_update_delay_seconds = 60 * 60
+background_update_delay_seconds = 60 #* 60
 
 
-def lambda_handler(event=None, context=None):
+def lambda_handler_movie(event=None, context=None):
     """is called by aws"""
     
     print_banner()
@@ -36,6 +36,7 @@ def lambda_handler(event=None, context=None):
         try:
             links = modify_img_series()
             sleep_until_delay_elapsed(links)
+            # start_time = time()
         except (KeyboardInterrupt, SystemExit):
             print("\n\nOk, I'll Stop. Doot!\n")
             break
@@ -44,6 +45,7 @@ def lambda_handler(event=None, context=None):
             # raise e
         finally:
             pass
+            # print('Series Updated at {}'.format(str(datetime.now())))
 
 
 def print_banner():
@@ -119,7 +121,7 @@ def upload_imgs(imgs):
                            ExtraArgs={'ACL': 'public-read', "ContentType": "image/png"})
 
         #Upload Archive
-        if "orig" not in rtPath:
+        if not "orig" in rtPath:
             bucket.upload_file(rtPath, arcPath,
                                ExtraArgs={'ACL': 'public-read', "ContentType": "image/png"})
 
@@ -169,7 +171,6 @@ def wait_if_required(delay, links):
 
 
 def background_handler(ii, links):
-    """Change the desktop background every 60 seconds"""
     global set_local_background
     global picNum
     if set_local_background:
